@@ -1,0 +1,9 @@
+function outerFunction(outer) {
+    let outerVariable = "rathlavath suman";
+function innerFunction() {
+    console.log("Outer Parameter:", outer); 
+    console.log("Outer Variable:", outerVariable);   }
+  return innerFunction;
+}
+const inner = outerFunction("Hello!");
+inner(); 

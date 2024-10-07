@@ -1,0 +1,35 @@
+
+function extractWithGroups(pattern, input) {
+  
+  const regex = new RegExp(pattern);
+  
+  
+  const match = regex.exec(input);
+
+  
+  if (match) {
+    return {
+      fullMatch: match[0], 
+      day: match[1],          
+      month: match[2],        
+      year: match[3]          
+    };
+  } else {
+    return null; 
+  }
+}
+
+
+const testString = "Today's date is 07-10-2024.";
+const datePattern = /(\d{2})-(\d{2})-(\d{4})/; 
+
+const result = extractWithGroups(datePattern, testString);
+
+if (result) {
+  console.log("Full Match: ", result.fullMatch);
+  console.log("Day: ", result.day);
+  console.log("Month: ", result.month);
+  console.log("Year: ", result.year);
+} else {
+  console.log("No match found.");
+}

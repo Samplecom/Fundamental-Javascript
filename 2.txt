@@ -1,0 +1,20 @@
+
+function checkRegexMatch(pattern, string) {
+    
+    const regex = new RegExp(pattern);
+    
+
+    return regex.test(string);
+}
+
+
+console.log(checkRegexMatch('hello', 'hello world'));  
+console.log(checkRegexMatch('world', 'hello world'));  
+console.log(checkRegexMatch('^hello', 'hello world'));
+console.log(checkRegexMatch('world$', 'hello world')); 
+console.log(checkRegexMatch('\\d+', '123abc')); 
+console.log(checkRegexMatch('\\D+', '123abc'));      
+console.log(checkRegexMatch('^[a-z]+$', 'hello'));     
+console.log(checkRegexMatch('^[A-Z]+$', 'HELLO'));     
+console.log(checkRegexMatch('^[a-z]+$', 'Hello'));  
+console.log(checkRegexMatch('abc', 'xyz'));           

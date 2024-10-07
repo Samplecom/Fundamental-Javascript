@@ -1,0 +1,31 @@
+
+function searchCharacterClasses(input) {
+ 
+  const digitPattern = /\d/g;            
+  const upperCasePattern = /[A-Z]/g;        
+  const lowerCasePattern = /[a-z]/g;        
+  const specialCharPattern = /[^a-zA-Z0-9]/g; 
+
+  
+  const digits = input.match(digitPattern) || [];
+  const upperCaseLetters = input.match(upperCasePattern) || [];
+  const lowerCaseLetters = input.match(lowerCasePattern) || [];
+  const specialChars = input.match(specialCharPattern) || [];
+
+ 
+  return {
+    digits: digits,
+    upperCaseLetters: upperCaseLetters,
+    lowerCaseLetters: lowerCaseLetters,
+    specialChars: specialChars
+  };
+}
+
+
+const testString = "Hello World! 1234 @#$"
+const result = searchCharacterClasses(testString);
+
+console.log("Digits: ", result.digits);
+console.log("Uppercase Letters: ", result.upperCaseLetters);
+console.log("Lowercase Letters: ", result.lowerCaseLetters);
+console.log("Special Characters: ", result.specialChars);
